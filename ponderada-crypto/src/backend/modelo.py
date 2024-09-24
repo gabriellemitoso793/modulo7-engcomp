@@ -119,8 +119,8 @@ def executar_modelo():
     current_dir = os.path.dirname(os.path.realpath(__file__))
 
     # Caminho completo para os arquivos CSV
-    csv_path_btc = os.path.join(current_dir, '/home/gabriellemitoso/modulo7-engcomp/ponderada-crypto/src/data/dados-puros/bitcoin_daily_data.csv')
-    csv_path_eth = os.path.join(current_dir, '/home/gabriellemitoso/modulo7-engcomp/ponderada-crypto/src/data/dados-puros/ethereum_daily_data.csv')
+    csv_path_btc = os.path.join(current_dir, '/home/gabriellemitoso/modulo7-engcomp/ponderada-crypto/src/backend/database/dados-puros/bitcoin_daily_data.csv')
+    csv_path_eth = os.path.join(current_dir, '/home/gabriellemitoso/modulo7-engcomp/ponderada-crypto/src/backend/database/dados-puros/ethereum_daily_data.csv')
 
     # Carregar os arquivos CSV
     df_btc = pd.read_csv(csv_path_btc)
