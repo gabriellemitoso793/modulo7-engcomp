@@ -1,0 +1,19 @@
+# Usar a imagem Node.js com npm mais estável
+FROM node:18.17-alpine
+
+# Definir o diretório de trabalho
+WORKDIR /src/frontend
+
+# Copiar os arquivos de definição de dependência
+COPY package*.json ./
+
+# Instalar dependências
+RUN npm install
+
+# Copiar o restante do código
+COPY . .
+
+EXPOSE 8000
+
+# Comando para iniciar a aplicação
+CMD ["npm", "run", "dev", "--host"]
