@@ -1,72 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const ForecastComponent = () => {
-    const [forecastData, setForecastData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:8000/executarmodelo');
-                setForecastData(response.data.dates);
-            } catch (error) {
-                console.error("Erro ao buscar os dados: ", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (!forecastData) {
+const Forecast = ({ forecast }) => {
+    if (!forecast) {
         return <div>No data available</div>;
     }
 
     return (
-        <div>
-            <h2>Previsões de Bitcoin</h2>
-            <h3>Melhores Dias</h3>
-            {forecastData.bitcoin.melhores_dias.map((dia, index) => (
-                <div key={index}>
-                    <p>Preço Previsto: {dia.forecast_price}</p>
-                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
-                    <p>Sinal de Compra: {dia.buy_signal ? 'Sim' : 'Não'}</p>
-                </div>
-            ))}
+        <div className="card mt-4">
+            <div className="card-body">
+                <h5 className="card-title">Previsões de Preço e Volatilidade</h5>
 
-            <h3>Previsão Próximos Dias</h3>
-            {forecastData.bitcoin.previsao_dias.map((dia, index) => (
-                <div key={index}>
-                    <p>Preço Previsto: {dia.forecast_price}</p>
-                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
-                </div>
-            ))}
+                <h6 className="mt-4">Melhores Dias</h6>
+                {forecast.melhores_dias.map((dia, index) => (
+                    <div key={index} className="mb-3">
+                        <strong>Preço Previsto:</strong> ${dia.forecast_price.toFixed(2)} <br/>
+                        <strong>Volatilidade Prevista:</strong> {dia.forecast_volatility.toFixed(6)} <br/>
+                        <strong>Sinal de Compra:</strong> {dia.buy_signal ? 'Sim' : 'Não'}
+                    </div>
+                ))}
 
-            <h2>Previsões de Ethereum</h2>
-            <h3>Melhores Dias</h3>
-            {forecastData.ethereum.melhores_dias.map((dia, index) => (
-                <div key={index}>
-                    <p>Preço Previsto: {dia.forecast_price}</p>
-                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
-                    <p>Sinal de Compra: {dia.buy_signal ? 'Sim' : 'Não'}</p>
-                </div>
-            ))}
-
-            <h3>Previsão Próximos Dias</h3>
-            {forecastData.ethereum.previsao_dias.map((dia, index) => (
-                <div key={index}>
-                    <p>Preço Previsto: {dia.forecast_price}</p>
-                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
-                </div>
-            ))}
+                <h6 className="mt-4">Previsão para os Próximos Dias</h6>
+                {forecast.previsao_dias.map((dia, index) => (
+                    <div key={index} className="mb-3">
+                        <strong>Preço Previsto:</strong> ${dia.forecast_price.toFixed(2)} <br/>
+                        <strong>Volatilidade Prevista:</strong> {dia.forecast_volatility.toFixed(6)}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
 
-export default ForecastComponent;
+export default Forecast;

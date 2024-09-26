@@ -31,7 +31,7 @@ const Dashboard = () => {
                     <Graph data={data} />
                 </div>
                 <div className="col-lg-6">
-                    <Forecast forecast={data.previsao_proximos_dias} />
+                    <Forecast forecast={data.dates[selectedCrypto]} />
                 </div>
             </div>
         </div>

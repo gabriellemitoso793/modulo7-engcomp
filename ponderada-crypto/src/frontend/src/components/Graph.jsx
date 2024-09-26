@@ -15,15 +15,29 @@ const Graph = ({ data }) => {
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: true,
+                tension: 0.4,  // Curva mais suave
             },
         ],
+    };
+
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: false,
+                ticks: {
+                    callback: function(value) {
+                        return `$${value}`;
+                    }
+                }
+            }
+        }
     };
 
     return (
         <div className="card mt-4">
             <div className="card-body">
-                <h5 className="card-title">Gráfico de Previsão</h5>
-                <Line data={chartData} />
+                <h5 className="card-title">Gráfico de Previsão de Preço</h5>
+                <Line data={chartData} options={options} />
             </div>
         </div>
     );
