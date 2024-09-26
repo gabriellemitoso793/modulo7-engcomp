@@ -2,6 +2,10 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 const Graph = ({ data }) => {
+    if (!data || !data.holt_winters_forecast) {
+        return <div>No data available</div>;
+    }
+
     const chartData = {
         labels: data.holt_winters_forecast.map((_, index) => `Dia ${index + 1}`),
         datasets: [

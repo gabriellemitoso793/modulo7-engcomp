@@ -15,7 +15,7 @@ ponderada-crypto/
 │   │   └── processar.py        # Funções auxiliares para processar resultados dos modelos
 │   └── logs/                  # Logs para monitoramento do sistema
 │       └── app.log            # Arquivo de log do sistema
-│
+│ 
 ├── frontend/
 │   ├── public/                # Diretório público para assets estáticos
 │   ├── src/

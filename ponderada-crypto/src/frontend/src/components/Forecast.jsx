@@ -1,22 +1,72 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const Forecast = ({ forecast }) => {
+const ForecastComponent = () => {
+    const [forecastData, setForecastData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/executarmodelo');
+                setForecastData(response.data.dates);
+            } catch (error) {
+                console.error("Erro ao buscar os dados: ", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!forecastData) {
+        return <div>No data available</div>;
+    }
+
     return (
-        <div className="card mt-4">
-            <div className="card-body">
-                <h5 className="card-title">Previsão dos Próximos 5 Dias</h5>
-                <ul className="list-group list-group-flush">
-                    {forecast.map((day, index) => (
-                        <li className="list-group-item" key={index}>
-                            <strong>Dia:</strong> {day.date} <br />
-                            <strong>Preço Previsto:</strong> {day.forecast_price.toFixed(2)} <br />
-                            <strong>Sinal de Compra:</strong> {day.buy_signal ? 'Sim' : 'Não'}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        <div>
+            <h2>Previsões de Bitcoin</h2>
+            <h3>Melhores Dias</h3>
+            {forecastData.bitcoin.melhores_dias.map((dia, index) => (
+                <div key={index}>
+                    <p>Preço Previsto: {dia.forecast_price}</p>
+                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
+                    <p>Sinal de Compra: {dia.buy_signal ? 'Sim' : 'Não'}</p>
+                </div>
+            ))}
+
+            <h3>Previsão Próximos Dias</h3>
+            {forecastData.bitcoin.previsao_dias.map((dia, index) => (
+                <div key={index}>
+                    <p>Preço Previsto: {dia.forecast_price}</p>
+                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
+                </div>
+            ))}
+
+            <h2>Previsões de Ethereum</h2>
+            <h3>Melhores Dias</h3>
+            {forecastData.ethereum.melhores_dias.map((dia, index) => (
+                <div key={index}>
+                    <p>Preço Previsto: {dia.forecast_price}</p>
+                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
+                    <p>Sinal de Compra: {dia.buy_signal ? 'Sim' : 'Não'}</p>
+                </div>
+            ))}
+
+            <h3>Previsão Próximos Dias</h3>
+            {forecastData.ethereum.previsao_dias.map((dia, index) => (
+                <div key={index}>
+                    <p>Preço Previsto: {dia.forecast_price}</p>
+                    <p>Volatilidade Prevista: {dia.forecast_volatility}</p>
+                </div>
+            ))}
         </div>
     );
 };
 
-export default Forecast;
+export default ForecastComponent;
