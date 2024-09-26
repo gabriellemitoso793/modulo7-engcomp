@@ -23,3 +23,5 @@ const CryptoSelector = ({ selectedCrypto, setSelectedCrypto }) => {
 };
 
 export default CryptoSelector;
+
+

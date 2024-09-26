@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Forecast = ({ forecast }) => {
-    if (!forecast) {
+    if (!forecast || !forecast.melhores_dias || !forecast.previsao_dias) {
         return <div>No data available</div>;
     }
 
@@ -32,3 +32,4 @@ const Forecast = ({ forecast }) => {
 };
 
 export default Forecast;
+

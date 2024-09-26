@@ -13,9 +13,14 @@ const Dashboard = () => {
     useEffect(() => {
         const getData = async () => {
             setLoading(true);
-            const result = await fetchCryptoData(selectedCrypto);
-            setData(result);
-            setLoading(false);
+            try {
+                const result = await fetchCryptoData(selectedCrypto);
+                setData(result);
+            } catch (error) {
+                console.error("Erro ao buscar dados da API", error);
+            } finally {
+                setLoading(false);
+            }
         };
 
         getData();
@@ -23,12 +28,16 @@ const Dashboard = () => {
 
     if (loading) return <Loading />;
 
+    if (!data || !data.dates || !data.dates[selectedCrypto]) {
+        return <div>No data available</div>;
+    }
+
     return (
         <div className="container">
             <CryptoSelector selectedCrypto={selectedCrypto} setSelectedCrypto={setSelectedCrypto} />
             <div className="row">
                 <div className="col-lg-6">
-                    <Graph data={data} />
+                    <Graph data={data.dates[selectedCrypto]} />
                 </div>
                 <div className="col-lg-6">
                     <Forecast forecast={data.dates[selectedCrypto]} />

@@ -1,5 +1,18 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    LineElement,
+    PointElement,
+    LinearScale,
+    Title,
+    Tooltip,
+    Legend,
+    Filler,
+    CategoryScale
+} from 'chart.js';
+
+ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, Filler, CategoryScale);
 
 const Graph = ({ data }) => {
     if (!data || !data.holt_winters_forecast) {
@@ -15,20 +28,31 @@ const Graph = ({ data }) => {
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: true,
-                tension: 0.4,  // Curva mais suave
+                tension: 0.4, 
             },
         ],
     };
 
     const options = {
         scales: {
+            x: { 
+                type: 'category',
+                title: {
+                    display: true,
+                    text: 'Dias',
+                },
+            },
             y: {
                 beginAtZero: false,
                 ticks: {
                     callback: function(value) {
                         return `$${value}`;
                     }
-                }
+                },
+                title: {
+                    display: true,
+                    text: 'Preço',
+                },
             }
         }
     };

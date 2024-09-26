@@ -18,6 +18,7 @@ ponderada-crypto/
 │ 
 ├── frontend/
 │   ├── public/                # Diretório público para assets estáticos
+│   │   ├── index.html
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Dashboard.jsx   # Componente do Dashboard
