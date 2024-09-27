@@ -10,6 +10,10 @@ ponderada-crypto/
 │   │   └── dados-puros/
 │   │       ├── bitcoin_daily_data.csv
 │   │       └── ethereum_daily_data.csv
+│   │       └── collect_data.py
+    │   └── dados-processados/
+│   │       ├── analise-exploratoria-btc.ipynb
+│   │       └── analise-exploratoria-eth.ipynb
 │   ├── utils/
 │   │   ├── file_handler.py     # Funções auxiliares para manipulação de arquivos (upload, etc.)
 │   │   └── processar.py        # Funções auxiliares para processar resultados dos modelos
@@ -34,4 +38,6 @@ ponderada-crypto/
 │   └── node_modules/          # Módulos instalados do Node.js
 │
 ├── docker-compose.yml          # Arquivo Docker Compose para orquestrar frontend e backend
+├── package.json         
+├── package-lock.json           # Arquivo Docker Compose para orquestrar frontend e backend 
 └── README.md                   # Documentação do projeto
