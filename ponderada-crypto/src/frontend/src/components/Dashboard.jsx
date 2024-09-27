@@ -32,15 +32,17 @@ const Dashboard = () => {
         return <div>No data available</div>;
     }
 
+    const forecastData = data.dates[selectedCrypto]; // Certifique-se de que isso contém 'previsao_dias'
+
     return (
         <div className="container">
             <CryptoSelector selectedCrypto={selectedCrypto} setSelectedCrypto={setSelectedCrypto} />
             <div className="row">
                 <div className="col-lg-6">
-                    <Graph data={data.dates[selectedCrypto]} />
+                    <Graph forecast={forecastData} />
                 </div>
                 <div className="col-lg-6">
-                    <Forecast forecast={data.dates[selectedCrypto]} />
+                    <Forecast forecast={forecastData} />
                 </div>
             </div>
         </div>

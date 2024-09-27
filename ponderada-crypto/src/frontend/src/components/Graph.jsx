@@ -14,21 +14,21 @@ import {
 
 ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend, Filler, CategoryScale);
 
-const Graph = ({ data }) => {
-    if (!data || !data.holt_winters_forecast) {
+const Graph = ({ forecast }) => {
+    if (!forecast || !forecast.previsao_dias || forecast.previsao_dias.length === 0) {
         return <div>No data available</div>;
     }
 
     const chartData = {
-        labels: data.holt_winters_forecast.map((_, index) => `Dia ${index + 1}`),
+        labels: forecast.previsao_dias.map((_, index) => `Dia ${index + 1}`),
         datasets: [
             {
                 label: 'Previsão de Preço',
-                data: data.holt_winters_forecast,
+                data: forecast.previsao_dias.map(dia => dia.forecast_price),
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: true,
-                tension: 0.4, 
+                tension: 0.4,
             },
         ],
     };
