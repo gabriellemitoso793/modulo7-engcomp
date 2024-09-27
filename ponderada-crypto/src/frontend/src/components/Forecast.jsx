@@ -10,8 +10,8 @@ const Forecast = ({ forecast }) => {
             <div className="card-body">
                 <h5 className="card-title">Previsões de Preço e Volatilidade</h5>
 
-                {/* Melhores Dias */}
-                <h6 className="mt-4">Melhores Dias</h6>
+                {/* Melhor Dia */}
+                <h6 className="mt-4">Melhor Dia</h6>
                 <table className="table table-striped">
                     <thead>
                         <tr>

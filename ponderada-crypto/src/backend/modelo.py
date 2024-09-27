@@ -107,6 +107,7 @@ def processar_dataframe(df, nome_cripto):
         'holt_winters_forecast': forecast_df['holt_winters_forecast'].tolist()
     }
 
+# Função para executar modelo
 def executar_modelo():
     current_dir = os.path.dirname(os.path.realpath(__file__))
     csv_path_btc = os.path.join(DATA_DIR, 'bitcoin_daily_data.csv')
