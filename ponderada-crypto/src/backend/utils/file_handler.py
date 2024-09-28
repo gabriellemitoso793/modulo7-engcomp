@@ -1,17 +1,19 @@
 import os
 from fastapi import UploadFile
 from config import DATA_DIR
+from pathlib import Path
 
-def save_file(file: UploadFile, data_dir: str) -> str:
+# Função para salvar o arquivo enviado no diretório
+def save_file(file: UploadFile, data_dir: Path = DATA_DIR) -> str:
 
-    # Create the directory if it doesn't exist
+    #Cria o diretório se ele não existir
     os.makedirs(data_dir, exist_ok=True)
 
-    # Define the path where the file will be saved
-    file_location = os.path.join(data_dir, file.filename)
+    #Define o caminho onde o arquivo será salvo
+    file_location = data_dir / file.filename
 
-    # Save the file
+    #Salva o arquivo
     with open(file_location, "wb") as buffer:
         buffer.write(file.file.read())
 
-    return file_location
+    return str(file_location)  #Retorna o caminho

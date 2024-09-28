@@ -4458,3 +4458,1197 @@ pip install python-multipart
 2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
 2024-09-27 18:33:27 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
 2024-09-27 18:33:27 INFO: Modelo executado com sucesso.
+2024-09-27 18:37:42 INFO: Iniciando a execução do modelo.
+2024-09-27 18:37:42 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:37:43 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:37:43 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:37:43 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:37:43 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:37:43 INFO: Modelo executado com sucesso.
+2024-09-27 18:39:47 INFO: Iniciando a execução do modelo.
+2024-09-27 18:39:47 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:39:47 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:39:47 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:39:47 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:39:47 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:39:47 INFO: Modelo executado com sucesso.
+2024-09-27 18:40:00 INFO: Iniciando a execução do modelo.
+2024-09-27 18:40:00 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:40:00 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:40:00 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:40:00 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:40:00 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:40:00 INFO: Modelo executado com sucesso.
+2024-09-27 18:42:04 INFO: Iniciando a execução do modelo.
+2024-09-27 18:42:04 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:42:04 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:42:05 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:42:05 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:42:05 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:42:05 INFO: Modelo executado com sucesso.
+2024-09-27 18:43:38 INFO: Iniciando a execução do modelo.
+2024-09-27 18:43:38 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:43:39 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:43:39 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:39 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:39 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:39 INFO: Modelo executado com sucesso.
+2024-09-27 18:43:40 INFO: Iniciando a execução do modelo.
+2024-09-27 18:43:40 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:43:40 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:43:40 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:40 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:40 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:43:40 INFO: Modelo executado com sucesso.
+2024-09-27 18:44:55 INFO: Iniciando a execução do modelo.
+2024-09-27 18:44:55 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:44:56 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:44:56 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:44:56 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:44:56 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:44:56 INFO: Modelo executado com sucesso.
+2024-09-27 18:47:43 INFO: Iniciando a execução do modelo.
+2024-09-27 18:47:43 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:47:43 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:47:43 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:47:43 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:47:43 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:47:43 INFO: Modelo executado com sucesso.
+2024-09-27 18:48:16 INFO: Iniciando a execução do modelo.
+2024-09-27 18:48:16 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:48:16 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:48:17 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:48:17 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:48:17 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:48:17 INFO: Modelo executado com sucesso.
+2024-09-27 18:51:08 INFO: Iniciando a execução do modelo.
+2024-09-27 18:51:08 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:51:09 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:51:09 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:09 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:09 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:09 INFO: Modelo executado com sucesso.
+2024-09-27 18:51:10 INFO: Iniciando a execução do modelo.
+2024-09-27 18:51:10 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:51:10 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 18:51:10 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:10 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:10 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 18:51:10 INFO: Modelo executado com sucesso.
+2024-09-27 19:02:43 INFO: Iniciando a execução do modelo.
+2024-09-27 19:02:43 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:02:44 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:02:44 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:02:44 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:02:44 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:02:44 INFO: Modelo executado com sucesso.
+2024-09-27 19:17:30 INFO: Iniciando a execução do modelo.
+2024-09-27 19:17:30 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:17:30 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:17:30 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:17:30 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:17:30 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:17:30 INFO: Modelo executado com sucesso.
+2024-09-27 19:20:12 INFO: Iniciando a execução do modelo.
+2024-09-27 19:20:12 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:20:13 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:20:13 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:20:13 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:20:13 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:20:13 INFO: Modelo executado com sucesso.
+2024-09-27 19:22:14 INFO: Iniciando a execução do modelo.
+2024-09-27 19:22:14 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:14 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:14 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:14 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:15 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:15 INFO: Modelo executado com sucesso.
+2024-09-27 19:22:17 INFO: Iniciando a execução do modelo.
+2024-09-27 19:22:17 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:17 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:17 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:17 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:17 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:17 INFO: Modelo executado com sucesso.
+2024-09-27 19:22:19 INFO: Iniciando a execução do modelo.
+2024-09-27 19:22:19 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:19 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:22:20 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:20 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:20 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:22:20 INFO: Modelo executado com sucesso.
+2024-09-27 19:24:44 INFO: Iniciando a execução do modelo.
+2024-09-27 19:24:45 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:24:45 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:24:45 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:24:45 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:24:45 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:24:45 INFO: Modelo executado com sucesso.
+2024-09-27 19:31:08 INFO: Iniciando a execução do modelo.
+2024-09-27 19:31:08 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:31:08 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:31:08 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:31:08 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:31:08 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:31:08 INFO: Modelo executado com sucesso.
+2024-09-27 19:46:19 INFO: Iniciando a execução do modelo.
+2024-09-27 19:46:19 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:46:19 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:46:19 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:46:19 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:46:19 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:46:19 INFO: Modelo executado com sucesso.
+2024-09-27 19:50:40 INFO: Iniciando a execução do modelo.
+2024-09-27 19:50:40 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:50:40 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:50:41 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:41 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:41 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:41 INFO: Modelo executado com sucesso.
+2024-09-27 19:50:46 INFO: Iniciando a execução do modelo.
+2024-09-27 19:50:46 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:50:46 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:50:46 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:46 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:46 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:50:46 INFO: Modelo executado com sucesso.
+2024-09-27 19:54:21 INFO: Iniciando a execução do modelo.
+2024-09-27 19:54:21 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:54:21 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:54:22 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:22 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:22 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:22 INFO: Modelo executado com sucesso.
+2024-09-27 19:54:35 INFO: Iniciando a execução do modelo.
+2024-09-27 19:54:35 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:54:35 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 19:54:35 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:36 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:36 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 19:54:36 INFO: Modelo executado com sucesso.
+2024-09-27 20:16:47 INFO: Rota '/hello' acessada.
+2024-09-27 20:16:52 INFO: Iniciando a execução do modelo.
+2024-09-27 20:16:52 INFO: Colunas do DataFrame Bitcoin: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 20:16:52 INFO: Colunas do DataFrame Ethereum: Index(['date', 'open_price', 'close_price', 'min_price', 'max_price',
+       'total_volume', '7_day_MA', 'daily_return', 'volatility', 'VWAP',
+       'RSI'],
+      dtype='object')
+2024-09-27 20:16:53 INFO: Resultado do modelo: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 20:16:53 INFO: Resultados recebidos para processamento: {'bitcoin': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24             0.002624  ...           63920.611367
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.002624    63369.112108           0.759571       False
+2024-09-25             0.002989    63409.492293           0.759571       False
+2024-09-26             0.003347    63416.892774           0.759571       False
+2024-09-27             0.003697    63426.284171           0.759571       False
+2024-09-28             0.004041    63423.223072           0.759571       False, 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias':             forecast_volatility  ...  holt_winters_forecast
+2024-09-24              0.00573  ...            2610.486414
+
+[1 rows x 5 columns], 'previsao_proximos_dias':             forecast_volatility  forecast_price  previous_week_avg  buy_signal
+2024-09-24             0.005730     2586.832171           0.364004       False
+2024-09-25             0.005773     2593.374766           0.364004       False
+2024-09-26             0.005813     2591.706467           0.364004       False
+2024-09-27             0.005853     2594.856112           0.364004       False
+2024-09-28             0.005890     2594.157286           0.364004       False, 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 20:16:53 INFO: Dados processados: {'bitcoin': {'melhores_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False, 'holt_winters_forecast': 63920.61136716407}], 'previsao_dias': [{'forecast_volatility': 0.0026242159964757917, 'forecast_price': 63369.1121084859, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0029891295188952055, 'forecast_price': 63409.49229325031, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003346734767293715, 'forecast_price': 63416.89277405266, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.003697178107497422, 'forecast_price': 63426.28417071841, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}, {'forecast_volatility': 0.0040406029740035, 'forecast_price': 63423.223072125074, 'previous_week_avg': 0.759570912722696, 'buy_signal': False}], 'holt_winters_forecast': [63920.61136716407, 63486.56749316123, 63789.514663361464, 63842.55665876324, 63872.78093528095, 63922.148034919526, 64023.545903678016, 64635.008889131655, 64200.96501512882, 64503.912185329034]}, 'ethereum': {'melhores_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False, 'holt_winters_forecast': 2610.4864135029416}], 'previsao_dias': [{'forecast_volatility': 0.0057303920235917535, 'forecast_price': 2586.832170798617, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.00577279715070606, 'forecast_price': 2593.3747661705315, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005813481391930856, 'forecast_price': 2591.706467469537, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005852514584298743, 'forecast_price': 2594.8561118935, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}, {'forecast_volatility': 0.005889963730714182, 'forecast_price': 2594.1572861962777, 'previous_week_avg': 0.3640041418118951, 'buy_signal': False}], 'holt_winters_forecast': [2610.4864135029416, 2578.082706876181, 2593.0933591543385, 2596.225632397411, 2584.44740683406, 2590.8299064463454, 2597.281624283051, 2629.5492737409804, 2597.14556711422, 2612.156219392378]}}
+2024-09-27 20:16:53 INFO: Modelo executado com sucesso.
+2024-09-27 20:17:27 INFO: Iniciando a execução do modelo.
+2024-09-27 20:17:27 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:19:01 INFO: Iniciando a execução do modelo.
+2024-09-27 20:19:01 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:20:16 INFO: Rota '/hello' acessada.
+2024-09-27 20:20:19 INFO: Iniciando a execução do modelo.
+2024-09-27 20:20:19 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:20:20 INFO: Iniciando a execução do modelo.
+2024-09-27 20:20:20 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:23:42 INFO: Rota '/hello' acessada.
+2024-09-27 20:23:47 INFO: Iniciando a execução do modelo.
+2024-09-27 20:23:47 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:23:47 INFO: Iniciando a execução do modelo.
+2024-09-27 20:23:47 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:25:33 INFO: Iniciando a execução do modelo.
+2024-09-27 20:25:33 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:27:03 INFO: Rota '/hello' acessada.
+2024-09-27 20:27:06 INFO: Iniciando a execução do modelo.
+2024-09-27 20:27:06 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:27:07 INFO: Iniciando a execução do modelo.
+2024-09-27 20:27:07 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:29:21 INFO: Rota '/hello' acessada.
+2024-09-27 20:29:24 INFO: Iniciando a execução do modelo.
+2024-09-27 20:29:24 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:29:25 INFO: Iniciando a execução do modelo.
+2024-09-27 20:29:25 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:32:33 INFO: Rota '/hello' acessada.
+2024-09-27 20:32:37 INFO: Iniciando a execução do modelo.
+2024-09-27 20:32:37 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:32:39 INFO: Iniciando a execução do modelo.
+2024-09-27 20:32:39 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:35:13 INFO: Iniciando a execução do modelo.
+2024-09-27 20:35:13 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:37:05 INFO: Iniciando a execução do modelo.
+2024-09-27 20:37:05 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:38:37 INFO: Iniciando a execução do modelo.
+2024-09-27 20:38:37 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:39:17 INFO: Rota '/hello' acessada.
+2024-09-27 20:39:20 INFO: Iniciando a execução do modelo.
+2024-09-27 20:39:20 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:39:21 INFO: Iniciando a execução do modelo.
+2024-09-27 20:39:21 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:40:18 INFO: Iniciando a execução do modelo.
+2024-09-27 20:40:18 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:40:19 INFO: Iniciando a execução do modelo.
+2024-09-27 20:40:19 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 20:45:27 INFO: Iniciando a execução do modelo.
+2024-09-27 20:45:27 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 21:02:24 INFO: Iniciando a execução do modelo.
+2024-09-27 21:02:24 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-27 21:02:26 INFO: Iniciando a execução do modelo.
+2024-09-27 21:02:26 ERROR: Erro ao executar o modelo: [Errno 2] No such file or directory: '/app/database/dados-puros/bitcoin_daily_data.csv'
+2024-09-28 12:31:10 INFO: Iniciando a execu��o do modelo.
+2024-09-28 12:31:10 ERROR: Erro ao obter dados da bitcoin: Execution failed on sql 'SELECT * FROM bitcoin_daily_status': no such table: bitcoin_daily_status
+2024-09-28 12:31:10 ERROR: Erro ao obter dados da ethereum: Execution failed on sql 'SELECT * FROM ethereum_daily_status': no such table: ethereum_daily_status
+2024-09-28 12:31:10 INFO: Resultado do modelo: {'Bitcoin': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}, 'Ethereum': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}}
+2024-09-28 12:31:10 INFO: Modelo executado com sucesso.
+2024-09-28 12:31:10 INFO: Rota '/hello' acessada.
+2024-09-28 12:31:16 INFO: Iniciando a execu��o do modelo.
+2024-09-28 12:31:16 ERROR: Erro ao obter dados da bitcoin: Execution failed on sql 'SELECT * FROM bitcoin_daily_status': no such table: bitcoin_daily_status
+2024-09-28 12:31:16 ERROR: Erro ao obter dados da ethereum: Execution failed on sql 'SELECT * FROM ethereum_daily_status': no such table: ethereum_daily_status
+2024-09-28 12:31:16 INFO: Resultado do modelo: {'Bitcoin': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}, 'Ethereum': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}}
+2024-09-28 12:31:16 INFO: Modelo executado com sucesso.
+2024-09-28 13:01:21 INFO: Iniciando a execu��o do modelo.
+2024-09-28 13:01:21 ERROR: Erro ao obter dados da bitcoin: Execution failed on sql 'SELECT * FROM bitcoin_daily_status': no such table: bitcoin_daily_status
+2024-09-28 13:01:21 ERROR: Erro ao obter dados da ethereum: Execution failed on sql 'SELECT * FROM ethereum_daily_status': no such table: ethereum_daily_status
+2024-09-28 13:01:21 INFO: Resultado do modelo: {'Bitcoin': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}, 'Ethereum': {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}}
+2024-09-28 13:01:21 INFO: Modelo executado com sucesso.

@@ -38,6 +38,7 @@ ponderada-crypto/
 │   └── node_modules/          # Módulos instalados do Node.js
 │
 ├── docker-compose.yml          # Arquivo Docker Compose para orquestrar frontend e backend
-├── package.json         
+├── package.json
+├── crypto_data.db           
 ├── package-lock.json           # Arquivo Docker Compose para orquestrar frontend e backend 
 └── README.md                   # Documentação do projeto

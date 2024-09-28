@@ -1,154 +1,145 @@
 import pandas as pd
 import numpy as np
-import warnings
 import logging
-import os
+import sqlite3
 from arch import arch_model
-from statsmodels.tsa.arima.model import ARIMA
+from pmdarima import auto_arima  # Alterado para pmdarima
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
-from sklearn.preprocessing import MinMaxScaler, RobustScaler
-from config import DATA_DIR
-from statsmodels.tools.sm_exceptions import ConvergenceWarning
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import RobustScaler
+from config import DATA_DIR  
+from utils.processar import obter_dados_cripto 
 
+# Configuração do logging
+logging.basicConfig(level=logging.INFO)
+
+# Função para processar o DataFrame
 def processar_dataframe(df, nome_cripto):
     logging.info(f"Colunas do DataFrame {nome_cripto}: {df.columns}")
 
-    # Renomeando as colunas do dataframa
+    # Renomear colunas
     df.rename(columns={
         'open_price': 'Abertura',
         'close_price': 'Ultimo',
         'total_volume': 'Vol',
         'max_price': 'Maxima',
         'min_price': 'Minima',
-        'volatility': 'Volatilidade'
+        'volatility': 'Volatilidade',
+        'date': 'Data'
     }, inplace=True)
 
-    # Definindo as colunas necessarias 
-    required_columns = ['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade']
+    # Verificar colunas obrigatórias
+    required_columns = ['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade', 'Data']
     missing_columns = [col for col in required_columns if col not in df.columns]
 
-    # Verificando se todas as colunas que serão utilizadas estão presentes
     if missing_columns:
         logging.error(f"As seguintes colunas estão faltando no DataFrame {nome_cripto}: {missing_columns}")
         return {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    # Usando a RobustScaler para transformar as colunas numéricas, modelo mais resistente a outliers
+    # Normalização usando RobustScaler
     scaler = RobustScaler()
     df[['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade']] = scaler.fit_transform(
         df[['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade']]
     )
 
-    # Convertendo a coluna de data para o formato datetime e removendo linhas com valores nulos
-    df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d', errors='coerce')
-    df.dropna(subset=['date', 'Ultimo'], inplace=True)
+    #Conversão da coluna de data
+    df['Data'] = pd.to_datetime(df['Data'], format='%Y-%m-%d', errors='coerce')
+    df.dropna(subset=['Data', 'Ultimo'], inplace=True)
 
-    # Removendo zeros da coluna 'Ultimo' e os valores nulos resultantes
-    df['Ultimo'] = df['Ultimo'].replace(0, np.nan)
+    #Limpeza de dados
+    df['Ultimo'].replace(0, np.nan, inplace=True)
     df.dropna(subset=['Ultimo'], inplace=True)
 
-    # Verificando se a coluna 'Ultimo' tem mais de um valor único
+    #Verificação da variabilidade dos preços
     if df['Ultimo'].nunique() <= 1:
         logging.error(f"A coluna 'Ultimo' do {nome_cripto} contém valores idênticos ou não variáveis.")
         return {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    # Calculando o retorno do log
+    #Cálculo do log
     df['log_return'] = np.log(df['Ultimo'] / df['Ultimo'].shift(1))
     df.dropna(subset=['log_return'], inplace=True)
 
-    # Verificando se o DataFrame ficou vazio após o cálculo
+    #Verificando se DataFrame está vazio
     if df.empty:
         logging.error(f"O DataFrame {nome_cripto} ficou vazio após o cálculo do retorno logarítmico.")
         return {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    # Ajustando o modelo GARCH para os retornos do log
+    #Modelo GARCH
     model = arch_model(df['log_return'], vol='Garch', p=1, q=1)
     garch_fit = model.fit(disp='off')
+    forecast_horizon = 10
+    forecasts = garch_fit.forecast(horizon=forecast_horizon)
+    volatility_forecast = forecasts.variance.values[-1]
 
-    forecast_horizon = 10  # Número de dias para previsão
-    forecasts = garch_fit.forecast(horizon=forecast_horizon)  # Faz a previsão de volatilidade
-    volatility_forecast = forecasts.variance.values[-1]  # Extrai a previsão de volatilidade
-
-    # Criando um DataFrame para armazenar as previsões de volatilidade
-    last_date = df['date'].max()  # Última data no DataFrame
+    #Criação do DataFrame para previsões de volatilidade
+    last_date = df['Data'].max()
     forecast_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=forecast_horizon)
     forecast_df = pd.DataFrame(volatility_forecast, index=forecast_dates, columns=['forecast_volatility'])
 
-    # Ajustando o modelo ARIMA para prever preços
-    train, test = train_test_split(df['Ultimo'], test_size=0.2, shuffle=False)  # Dividindo os dados em treino e teste
-    grid_search = GridSearchCV(estimator=ARIMA(), param_grid={'order': [(p, 1, q) for p in range(1, 6) for q in range(1, 3)]}, cv=3)
-    grid_search.fit(train.values)  # Buscando pelos melhores parâmetros
+    #Modelo ARIMA usando auto_arima do pmdarima
+    model_arima = auto_arima(df['Ultimo'], seasonal=False, trace=True, error_action='ignore', suppress_warnings=True)
+    price_forecast = model_arima.predict(n_periods=forecast_horizon)
 
-    best_order = grid_search.best_params_['order']  # Melhores parâmetros encontrados
-    arima_model = ARIMA(df['Ultimo'], order=best_order)  # Ajusta o modelo ARIMA
-    arima_fit = arima_model.fit()  # Treina o modelo
+    #Inversão da transformação para os preços previstos
+    price_forecast_full = np.full((len(price_forecast), 6), np.nan)
+    price_forecast_full[:, 1] = price_forecast
+    price_forecast_inverse = scaler.inverse_transform(price_forecast_full)
+    forecast_df['forecast_price'] = price_forecast_inverse[:, 1]
 
-    # Faz a previsão de preços usando o modelo ARIMA
-    price_forecast = arima_fit.forecast(steps=forecast_horizon)
-    price_forecast_full = np.full((len(price_forecast), 6), np.nan)  # Criando um array para armazenar os preços previstos
-    price_forecast_full[:, 1] = price_forecast.values  # Preenchendo com os preços previstos
-    price_forecast_inverse = scaler.inverse_transform(price_forecast_full)  # Invertendo a transformação
-    price_forecast = price_forecast_inverse[:, 1]  # Extraindo os preços invertidos
-    forecast_df['forecast_price'] = price_forecast  # Adicionando ao DataFrame de previsões
+    #Modelo Holt-Winters
+    holt_model = ExponentialSmoothing(df['Ultimo'], trend='add', seasonal='add', seasonal_periods=7)
+    holt_fit = holt_model.fit()
+    holt_forecast = holt_fit.forecast(steps=forecast_horizon)
 
-    # Cálculo da média da última semana
-    one_week_ago = df.index[-7:]  # Seleciona os últimos 7 dias
-    prices_last_week = df.loc[one_week_ago, 'Ultimo'].mean()  # Calcula a média dos preços da última semana
-    forecast_df['previous_week_avg'] = prices_last_week  # Adiciona a média ao DataFrame de previsões
-    forecast_df['buy_signal'] = forecast_df['forecast_price'] < forecast_df['previous_week_avg']  # Sinal de compra
+    #Log e print dos resultados
+    logging.info(f"Previsão de preço: {price_forecast}")
+    logging.info(f"Previsão de volatilidade: {forecast_df['forecast_volatility']}")
 
-    forecast_5_days = forecast_df.head(5)  # Seleciona as 5 primeiras previsões
-
-    # Ajustando do modelo Holt-Winters para suavização exponencial
-    try:
-        hw_model = ExponentialSmoothing(df['Ultimo'], trend='add', seasonal='add', seasonal_periods=7)
-        hw_fit = hw_model.fit()  # Treina o modelo Holt-Winters
-    except Exception as e:
-        logging.error(f"Erro ao ajustar o modelo Holt-Winters para {nome_cripto}: {e}")
-        return {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
-
-    hw_forecast = hw_fit.forecast(steps=forecast_horizon)  # Faz a previsão usando Holt-Winters
-    hw_forecast_scaled = scaler.transform(np.full((len(hw_forecast), 6), np.nan))  # Transforma para manter a consistência
-    hw_forecast_scaled[:, 1] = hw_forecast.values  # Preenche com as previsões
-    hw_forecast_inverse = scaler.inverse_transform(hw_forecast_scaled)  # Inverte a transformação
-    forecast_df['holt_winters_forecast'] = hw_forecast_inverse[:, 1]  # Adiciona ao DataFrame de previsões
-
-    # Seleciona os melhores dias com base em um percentil da volatilidade prevista
-    percentil = 10  # Definindo percentil para selecionar os melhores dias
-    threshold = np.percentile(forecast_df['forecast_volatility'], percentil)  # Calculando o limite de volatilidade
-    best_forecast_days = forecast_df[forecast_df['forecast_volatility'] <= threshold]  # Filtrando pelos melhores dias para compra
+    print(f"\n*** Resultados para {nome_cripto} ***")
+    print("Modelo GARCH - Previsão de Volatilidade:")
+    print(forecast_df['forecast_volatility'])
+    print("\nModelo ARIMA - Previsão de Preços:")
+    print(price_forecast)
+    print("\nModelo Holt-Winters - Previsão:")
+    print(holt_forecast)
 
     return {
-        'melhores_dias': best_forecast_days,
-        'previsao_proximos_dias': forecast_5_days,
-        'holt_winters_forecast': forecast_df['holt_winters_forecast'].tolist()
+        'melhores_dias': [],  #Implementando lógica para calcular os melhores dias
+        'previsao_proximos_dias': price_forecast.tolist(),
+        'holt_winters_forecast': holt_forecast.tolist()
     }
 
-# Função para executar o modelo
+#Função para salvar os resultados no banco de dados SQLite
+def save_to_sqlite(df, table_name):
+    db_path = DATA_DIR  #Caminho para o banco de dados existente
+    conn = sqlite3.connect(db_path)  #Conectarndo ao banco de dados
+    df.to_sql(table_name, conn, if_exists='replace', index=True)  #Salvando o DataFrame na tabela
+    conn.close()
+    print(f"Estatísticas diárias salvas com sucesso na tabela '{table_name}' do banco de dados '{db_path}'!")
+
+#Função principal para executar o modelo
 def executar_modelo():
-    current_dir = os.path.dirname(os.path.realpath(__file__)) 
-    csv_path_btc = os.path.join(DATA_DIR, 'bitcoin_daily_data.csv')  # Arquivo CSV do Bitcoin
-    csv_path_eth = os.path.join(DATA_DIR, 'ethereum_daily_data.csv')  # Arquivo CSV do Ethereum
+    #Executa o modelo para Bitcoin e Ethereum e printa os resultados
+    bitcoin_data = obter_dados_cripto('bitcoin')
+    ethereum_data = obter_dados_cripto('ethereum')
 
-    # Lê os dados de preços diários de Bitcoin e Ethereum
-    df_btc = pd.read_csv(csv_path_btc)
-    df_eth = pd.read_csv(csv_path_eth)
+    if bitcoin_data is not None and not bitcoin_data.empty:
+        resultado_bitcoin = processar_dataframe(bitcoin_data, 'Bitcoin')
+        save_to_sqlite(bitcoin_data, "bitcoin_daily_stats")
+    else:
+        resultado_bitcoin = {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    # Processa os dados de cada criptomoeda
-    resultados_btc = processar_dataframe(df_btc, 'Bitcoin')
-    resultados_eth = processar_dataframe(df_eth, 'Ethereum')
+    if ethereum_data is not None and not ethereum_data.empty:
+        resultado_ethereum = processar_dataframe(ethereum_data, 'Ethereum')
+        save_to_sqlite(ethereum_data, "ethereum_daily_stats")
+    else:
+        resultado_ethereum = {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    resultados = {}
-    # Prepara os resultados para cada criptomoeda
-    resultados['bitcoin'] = resultados_btc
-    resultados['ethereum'] = resultados_eth
+    return {
+        'Bitcoin': resultado_bitcoin,
+        'Ethereum': resultado_ethereum
+    }
 
-    return resultados  # Retorna os resultados processados
-
-# Executa o modelo
 if __name__ == "__main__":
-    warnings.simplefilter('ignore', ConvergenceWarning)  
-    logging.basicConfig(filename='logs/app.log', level=logging.INFO)  # Configura o logger
-    resultados = executar_modelo()  # Executa o modelo e obtém os resultados
-    print(resultados) 
+    resultados = executar_modelo()
+    print("\n*** Resultados Finais ***")
+    print(resultados)

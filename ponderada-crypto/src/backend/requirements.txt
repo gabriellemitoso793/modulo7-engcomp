@@ -10,3 +10,4 @@ seaborn==0.12.2
 requests==2.31.0
 scipy==1.11.1
 python-multipart==0.0.6
+pmdarima==1.8.0

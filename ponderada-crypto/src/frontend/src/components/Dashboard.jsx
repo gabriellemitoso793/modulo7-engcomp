@@ -32,7 +32,7 @@ const Dashboard = () => {
         return <div>No data available</div>;
     }
 
-    const forecastData = data.dates[selectedCrypto]; // Certifique-se de que isso contém 'previsao_dias'
+    const forecastData = data.dates[selectedCrypto]; 
 
     return (
         <div className="container">

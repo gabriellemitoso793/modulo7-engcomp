@@ -1,36 +1,34 @@
 import logging
+import sqlite3
+import pandas as pd
+import os
+from config import DATA_DIR
 
-def processar_resultado(resultados: dict) -> tuple:
-    """
-    Processa os resultados do modelo e prepara os dados para retorno.
-    """
-    logging.info(f"Resultados recebidos para processamento: {resultados}")
-
+#Conecta ao banco de dados SQLite
+def conectar_db():
     try:
-        melhores_dias_btc = resultados['bitcoin']['melhores_dias']
-        previsao_dias_btc = resultados['bitcoin']['previsao_proximos_dias']
-        holt_winters_forecast_btc = resultados['bitcoin']['holt_winters_forecast']
-
-        melhores_dias_eth = resultados['ethereum']['melhores_dias']
-        previsao_dias_eth = resultados['ethereum']['previsao_proximos_dias']
-        holt_winters_forecast_eth = resultados['ethereum']['holt_winters_forecast']
-
-        message = "Processamento realizado com sucesso!"
-        
-        dates = {
-            "bitcoin": {
-                "melhores_dias": melhores_dias_btc.to_dict(orient='records'),  
-                "previsao_dias": previsao_dias_btc.to_dict(orient='records'),  
-                "holt_winters_forecast": holt_winters_forecast_btc
-            },
-            "ethereum": {
-                "melhores_dias": melhores_dias_eth.to_dict(orient='records'),  
-                "previsao_dias": previsao_dias_eth.to_dict(orient='records'),  
-                "holt_winters_forecast": holt_winters_forecast_eth
-            }
-        }
-
-        return message, dates
+        conn = sqlite3.connect(DATA_DIR)
+        return conn
     except Exception as e:
-        logging.error(f"Erro ao processar os resultados: {e}")
-        raise ValueError(f"Erro ao processar os resultados: {str(e)}")
+        logging.error(f"Erro ao conectar ao banco de dados: {e}")
+        return None
+
+#Obtem dados da criptomoeda do banco de dados
+def obter_dados_cripto(nome_cripto):
+    conn = conectar_db()
+    if conn is None:
+        return None
+
+    query = f"SELECT * FROM {nome_cripto}_daily_status"
+    try:
+        df = pd.read_sql(query, conn)
+        return df
+    except Exception as e:
+        logging.error(f"Erro ao obter dados da {nome_cripto}: {e}")
+        return None
+    finally:
+        conn.close()
+
+if __name__ == "__main__":
+    bitcoin_data = obter_dados_cripto('bitcoin')
+    ethereum_data = obter_dados_cripto('ethereum')
