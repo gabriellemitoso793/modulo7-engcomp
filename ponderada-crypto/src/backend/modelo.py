@@ -3,20 +3,20 @@ import numpy as np
 import logging
 import sqlite3
 from arch import arch_model
-from pmdarima import auto_arima  # Alterado para pmdarima
+from pmdarima import auto_arima
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from sklearn.preprocessing import RobustScaler
 from config import DATA_DIR  
 from utils.processar import obter_dados_cripto 
 
-# Configuração do logging
+#Configuração do logging
 logging.basicConfig(level=logging.INFO)
 
-# Função para processar o DataFrame
+#Função para processar o DataFrame
 def processar_dataframe(df, nome_cripto):
     logging.info(f"Colunas do DataFrame {nome_cripto}: {df.columns}")
 
-    # Renomear colunas
+    #Renomeando as colunas
     df.rename(columns={
         'open_price': 'Abertura',
         'close_price': 'Ultimo',
@@ -27,7 +27,7 @@ def processar_dataframe(df, nome_cripto):
         'date': 'Data'
     }, inplace=True)
 
-    # Verificar colunas obrigatórias
+    #Verificar se as colunas obrigatórias estão na tabela
     required_columns = ['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade', 'Data']
     missing_columns = [col for col in required_columns if col not in df.columns]
 
@@ -35,7 +35,7 @@ def processar_dataframe(df, nome_cripto):
         logging.error(f"As seguintes colunas estão faltando no DataFrame {nome_cripto}: {missing_columns}")
         return {'melhores_dias': [], 'previsao_proximos_dias': [], 'holt_winters_forecast': []}
 
-    # Normalização usando RobustScaler
+    #Normalização usando RobustScaler
     scaler = RobustScaler()
     df[['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade']] = scaler.fit_transform(
         df[['Abertura', 'Ultimo', 'Vol', 'Maxima', 'Minima', 'Volatilidade']]
