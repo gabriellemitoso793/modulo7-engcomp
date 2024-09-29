@@ -1,19 +1,38 @@
+# Ponderada-Crypto
+
+O projeto **Ponderada-Crypto** é uma aplicação web full-stack que permite prever o melhor dia para comprar criptomoedas (Bitcoin e Ethereum) com base na volatilidade e no preço previsto, utilizando modelos estatísticos e de machine learning, como GARCH, ARIMA e Holt-Winters.
+
+## Índice
+- [Visão Geral](#visão-geral)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Dependências](#dependências)
+- [Modelos Utilizados](#modelos-utilizados)
+
+## Visão Geral
+
+O sistema coleta dados da API da Coingecko das criptomoedas e os processa para gerar previsões de preço e volatilidade, além de sugerir os melhores dias para compra. A aplicação conta com um frontend em React para exibir as previsões e um backend desenvolvido em FastAPI que executa os modelos e processa os dados.
+
+## Estrutura do Projeto
+
+```bash
 ponderada-crypto/
 │
 ├── backend/
-│   ├── main.py                # Código principal do FastAPI
+│   ├── main.py                # Código principal
 │   ├── modelo.py              # Código com os modelos GARCH, ARIMA, Holt-Winters
 │   ├── Dockerfile             # Arquivo Dockerfile do backend
-│   ├── requirements.txt       # Dependências do backend (FastAPI, pandas, etc.)
+│   ├── requirements.txt       # Dependências do backend 
 │   ├── config.py              # Configurações do caminho de arquivos e outras
+│   ├── retreinarmodelo.py      # Script para retreinar os modelos
 │   ├── database/
 │   │   └── dados-puros/
-│   │       ├── bitcoin_daily_data.csv
-│   │       └── ethereum_daily_data.csv
-│   │       └── collect_data.py
+│   │       ├── crypto_data.db  # Banco de dados com os dados de criptomoedas
+│   │       └── collect_data.py # Script para coletar dados de criptomoedas
     │   └── dados-processados/
-│   │       ├── analise-exploratoria-btc.ipynb
-│   │       └── analise-exploratoria-eth.ipynb
+│   │       ├── analise-exploratoria-btc.ipynb  # Análise exploratória de Bitcoin
+│   │       └── analise-exploratoria-eth.ipynb  # Análise exploratória de Ethereum
 │   ├── utils/
 │   │   ├── file_handler.py     # Funções auxiliares para manipulação de arquivos (upload, etc.)
 │   │   └── processar.py        # Funções auxiliares para processar resultados dos modelos
@@ -30,15 +49,78 @@ ponderada-crypto/
 │   │   │   ├── Graph.jsx       # Componente para gráficos
 │   │   │   ├── Forecast.jsx    # Componente para previsões
 │   │   │   └── Loading.jsx     # Componente de loading
+│   │   │   └── Dashboard.css   # Estilos para o Dashboard
+│   │   │   └── Forecast.css    # Estilos para o Forecast
 │   │   ├── App.jsx            # Componente principal do React
 │   │   ├── index.js           # Ponto de entrada do React
 │   │   └── api.js             # Funções para chamadas à API do backend
-│   ├── package.json           # Dependências do frontend (React, Bootstrap, etc.)
+│   ├── package.json           # Dependências do frontend 
 │   ├── Dockerfile             # Arquivo Dockerfile do frontend
 │   └── node_modules/          # Módulos instalados do Node.js
 │
 ├── docker-compose.yml          # Arquivo Docker Compose para orquestrar frontend e backend
-├── package.json
-├── crypto_data.db           
-├── package-lock.json           # Arquivo Docker Compose para orquestrar frontend e backend 
+├── package.json                # Dependências do projeto
+├── crypto_data.db              # Banco de dados de criptomoedas
+├── package-lock.json           # Controle de versões das dependências Node.js 
 └── README.md                   # Documentação do projeto
+```
+
+## Instalação
+
+### Requisitos
+
+- Docker e Docker Compose instalados na máquina
+- Python 3.10+
+- Node.js 18+
+
+### Passos
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-repositorio/ponderada-crypto.git
+cd ponderada-crypto
+```
+
+2. Inicialize o backend e o frontend com Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+3. O frontend estará disponível em http://localhost:3000 e o backend em http://localhost:8000.
+
+## Uso
+Interface Web
+A interface web permite que você selecione uma criptomoeda (Bitcoin ou Ethereum) e visualize as previsões de volatilidade e preço, além dos melhores dias para comprar com base nas previsões geradas pelos modelos.
+
+## Modelos
+O modelo padrão mostrado na interface puxa os dados de um banco de dados já feito, entretanto, você pode retreinar os modelos manualmente executando o script:
+
+```bash
+python backend/retreinarmodelo.py
+```
+
+## Dependências
+
+- Backend (backend/requirements.txt):
+- fastapi: Framework web para construir o backend.
+- arch: Implementação do modelo GARCH.
+- statsmodels: Utilizado para os modelos ARIMA e Holt-Winters.
+- pandas, numpy, scikit-learn: Manipulação de dados e pré-processamento.
+- matplotlib, seaborn: Visualização de dados para análise.
+- Frontend (frontend/package.json):
+- React: Biblioteca para construir a interface de usuário.
+- Axios: Utilizado para chamadas à API.
+- Bootstrap: Estilos e layout responsivo.
+
+## Modelos Utilizados
+
+- GARCH (Generalized Autoregressive Conditional Heteroskedasticity):
+Utilizado para prever a volatilidade dos preços de criptomoedas.
+
+- ARIMA (Autoregressive Integrated Moving Average):
+Modelo de série temporal utilizado para prever os preços futuros com base nos dados históricos.
+
+- Holt-Winters (Exponential Smoothing):
+Modelo para previsão sazonal, usado para complementar as previsões de preços.
