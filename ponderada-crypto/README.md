@@ -90,8 +90,7 @@ docker-compose up --build
 
 3. O frontend estará disponível em http://localhost:3000 e o backend em http://localhost:8000.
 
-## Uso
-Interface Web
+## Uso Interface Web
 A interface web permite que você selecione uma criptomoeda (Bitcoin ou Ethereum) e visualize as previsões de volatilidade e preço, além dos melhores dias para comprar com base nas previsões geradas pelos modelos.
 
 ## Modelos
