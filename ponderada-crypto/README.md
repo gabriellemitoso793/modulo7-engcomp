@@ -78,7 +78,7 @@ ponderada-crypto/
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-repositorio/ponderada-crypto.git
+git clone https://github.com/gabriellemitoso793/modulo7-engcomp.git
 cd ponderada-crypto
 ```
 
