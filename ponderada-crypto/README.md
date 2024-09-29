@@ -104,15 +104,15 @@ python backend/retreinarmodelo.py
 ## Dependências
 
 - Backend (backend/requirements.txt):
-- fastapi: Framework web para construir o backend.
-- arch: Implementação do modelo GARCH.
-- statsmodels: Utilizado para os modelos ARIMA e Holt-Winters.
-- pandas, numpy, scikit-learn: Manipulação de dados e pré-processamento.
-- matplotlib, seaborn: Visualização de dados para análise.
+    - fastapi: Framework web para construir o backend.
+    - arch: Implementação do modelo GARCH.
+    - statsmodels: Utilizado para os modelos ARIMA e Holt-Winters.
+    - pandas, numpy, scikit-learn: Manipulação de dados e pré-processamento.
+    - matplotlib, seaborn: Visualização de dados para análise.
 - Frontend (frontend/package.json):
-- React: Biblioteca para construir a interface de usuário.
-- Axios: Utilizado para chamadas à API.
-- Bootstrap: Estilos e layout responsivo.
+    - React: Biblioteca para construir a interface de usuário.
+    - Axios: Utilizado para chamadas à API.
+    - Bootstrap: Estilos e layout responsivo.
 
 ## Modelos Utilizados
 
