@@ -1,50 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import CryptoSelector from './CryptoSelector';
-import Graph from './Graph';
-import Forecast from './Forecast';
-import Loading from './Loading';
+import React, { useEffect, useState } from 'react';
 import { fetchCryptoData } from '../api';
+import Forecast from './Forecast';
+import Graph from './Graph';
+import CryptoSelector from './CryptoSelector';
 
 const Dashboard = () => {
     const [selectedCrypto, setSelectedCrypto] = useState('bitcoin');
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [cryptoData, setCryptoData] = useState(null);
 
     useEffect(() => {
-        const getData = async () => {
-            setLoading(true);
-            try {
-                const result = await fetchCryptoData(selectedCrypto);
-                setData(result);
-            } catch (error) {
-                console.error("Erro ao buscar dados da API", error);
-            } finally {
-                setLoading(false);
-            }
+        const loadData = async () => {
+            const data = await fetchCryptoData();
+            setCryptoData(data.resultado[selectedCrypto.charAt(0).toUpperCase() + selectedCrypto.slice(1)]);
         };
 
-        getData();
+        loadData();
     }, [selectedCrypto]);
 
-    if (loading) return <Loading />;
-
-    if (!data || !data.dates || !data.dates[selectedCrypto]) {
-        return <div>No data available</div>;
-    }
-
-    const forecastData = data.dates[selectedCrypto]; 
-
     return (
-        <div className="container">
+        <div>
+            <h2>Dashboard</h2>
             <CryptoSelector selectedCrypto={selectedCrypto} setSelectedCrypto={setSelectedCrypto} />
-            <div className="row">
-                <div className="col-lg-6">
-                    <Graph forecast={forecastData} />
-                </div>
-                <div className="col-lg-6">
-                    <Forecast forecast={forecastData} />
-                </div>
-            </div>
+            {cryptoData ? (
+                <>
+                    <Forecast cryptoData={cryptoData} />
+                    <Graph 
+                        holt_winters_forecast={cryptoData.holt_winters_forecast}
+                    />
+                </>
+            ) : (
+                <div className="alert alert-warning" role="alert">Carregando dados...</div>
+            )}
         </div>
     );
 };
