@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import logging
-import sqlite3
 from arch import arch_model
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -80,7 +79,7 @@ def processar_dataframe(df, nome_cripto):
     forecast_dates = pd.date_range(start=last_date + pd.Timedelta(days=1), periods=forecast_horizon)
     forecast_df = pd.DataFrame(volatility_forecast, index=forecast_dates, columns=['forecast_volatility'])
 
-    # Modelo ARIMA com statsmodels
+    # Modelo ARIMA
     model_arima = ARIMA(df['Ultimo'], order=(5, 1, 0))
     arima_fit = model_arima.fit()
     price_forecast = arima_fit.forecast(steps=forecast_horizon)
@@ -91,7 +90,7 @@ def processar_dataframe(df, nome_cripto):
     price_forecast_inverse = scaler.inverse_transform(price_forecast_full)
     forecast_df['forecast_price'] = price_forecast_inverse[:, 1]
 
-    # Revisando o Modelo Holt-Winters
+    # Modelo Holt-Winters
     try:
         holt_model = ExponentialSmoothing(df['Ultimo'], trend='add', seasonal='add', seasonal_periods=7)
         holt_fit = holt_model.fit()
