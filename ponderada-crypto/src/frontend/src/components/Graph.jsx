@@ -79,7 +79,7 @@ const Graph = ({ holt_winters_forecast = [] }) => {
 
     return (
         <div style={{ height: '400px' }}>
-            <h3>Gráfico de Previsão Holt-Winters</h3>
+            <h3>Gráfico de Previsão</h3>
             <Line data={data} options={options} />
         </div>
     );

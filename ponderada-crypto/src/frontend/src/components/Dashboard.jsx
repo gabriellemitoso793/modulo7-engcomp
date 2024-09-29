@@ -3,6 +3,7 @@ import { fetchCryptoData } from '../api';
 import Forecast from './Forecast';
 import Graph from './Graph';
 import CryptoSelector from './CryptoSelector';
+import './Dashboard.css';
 
 const Dashboard = () => {
     const [selectedCrypto, setSelectedCrypto] = useState('bitcoin');
@@ -18,18 +19,20 @@ const Dashboard = () => {
     }, [selectedCrypto]);
 
     return (
-        <div>
-            <h2>Dashboard</h2>
+        <div className="dashboard-container">
+            <h2 className="dashboard-title"></h2>
             <CryptoSelector selectedCrypto={selectedCrypto} setSelectedCrypto={setSelectedCrypto} />
             {cryptoData ? (
-                <>
+                <div className="dashboard-content">
                     <Forecast cryptoData={cryptoData} />
                     <Graph 
                         holt_winters_forecast={cryptoData.holt_winters_forecast}
                     />
-                </>
+                </div>
             ) : (
-                <div className="alert alert-warning" role="alert">Carregando dados...</div>
+                <div className="loading-alert alert alert-warning" role="alert">
+                    Carregando dados...
+                </div>
             )}
         </div>
     );
