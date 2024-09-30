@@ -9,6 +9,7 @@ O projeto **Ponderada-Crypto** é uma aplicação web full-stack que permite pre
 - [Uso](#uso)
 - [Dependências](#dependências)
 - [Modelos Utilizados](#modelos-utilizados)
+- [Arquitetura de Microserviços](#arquitetura-de-microserviços)
 
 ## Visão Geral
 
@@ -108,6 +109,7 @@ python backend/retreinarmodelo.py
     - statsmodels: Utilizado para os modelos ARIMA e Holt-Winters.
     - pandas, numpy, scikit-learn: Manipulação de dados e pré-processamento.
     - matplotlib, seaborn: Visualização de dados para análise.
+    
 ### Frontend (frontend/package.json):
     - React: Biblioteca para construir a interface de usuário.
     - Axios: Utilizado para chamadas à API.
@@ -123,3 +125,23 @@ Modelo de série temporal utilizado para prever os preços futuros com base nos 
 
 - Holt-Winters (Exponential Smoothing):
 Modelo para previsão sazonal, usado para complementar as previsões de preços.
+
+## Arquitetura de Microserviços
+
+O Ponderada-Crypto adota uma arquitetura baseada em microserviços para garantir modularidade e facilidade de manutenção. A aplicação é dividida em dois serviços principais, cada um executando uma parte específica da lógica do sistema:
+
+Neste projeto, dois microserviços principais foram configurados:
+
+### Backend
+
+- Desenvolvido em FastAPI, este serviço processa os dados de preço e volatilidade de criptomoedas (Bitcoin e Ethereum) e os expõe via uma API REST.
+- Ele se comunica diretamente com o banco de dados e utiliza modelos preditivos (GARCH, ARIMA, Holt-Winters) para gerar as previsões de preço e volatilidade.
+- Porta de acesso: 8000.
+
+### Frontend:
+
+- Desenvolvido em React, o frontend é responsável por exibir as informações para o usuário final, como gráficos de preços e recomendações de compra.
+- Ele consome as APIs fornecidas pelo backend para obter as previsões e visualizá-las de forma interativa.
+- Porta de acesso: 3000.
+
+Ambos os serviços estão conectados pela rede Docker chamada crypto_network, o que permite a comunicação eficiente entre eles.
